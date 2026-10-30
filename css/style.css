@@ -1,0 +1,560 @@
+/* House style — main #2E7D32   ground #FDF6EC   ink #2B2B2B   accent #F4A300
+   headings: Lora, serif   body: Inter, sans-serif
+   — fill these in with YOUR team's agreed four colours and two typefaces */
+
+/* 1 · house style — Member 1
+   resets, body defaults, headings, links, header, nav, footer look */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #FDF6EC;   /* ground */
+  color: #2B2B2B;               /* ink */
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: "Lora", serif;
+  line-height: 1.2;
+}
+
+a {
+  color: #2E7D32;   /* main */
+}
+
+header {
+  background-color: #2E7D32;   /* main */
+  color: #FDF6EC;
+  padding: 1rem 1.5rem;
+}
+
+header h1 {
+  margin: 0 0 0.25rem 0;
+}
+
+footer {
+  background-color: #2E7D32;
+  color: #FDF6EC;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+footer a {
+  color: #FDF6EC;   /* accent, used sparingly */
+}
+
+/* 2 · layout — Member 1
+   the page as a grid with named areas, the nav as a flexbox row */
+
+body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  grid-template-areas:
+    "header  header"
+    "nav     nav"
+    "main    aside"
+    "footer  footer";
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+header { grid-area: header; }
+nav    { grid-area: nav; }
+main   { grid-area: main; padding: 0 1.5rem; }
+aside  { grid-area: aside; padding: 0 1.5rem 0 0; }
+footer { grid-area: footer; }
+
+nav {
+  background-color: #2B2B2B;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #FDF6EC;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #2E7D32;
+}
+
+/* cards that wrap — used on menu.html, and anywhere a row of items needs it */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  background-color: rgba(46, 125, 50, 0.06);
+  border: 1px solid rgba(43, 43, 43, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  flex: 1 1 14rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* a wide table slides instead of pushing the page sideways — pricing.html */
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid rgba(43, 43, 43, 0.2);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+/* every image, form field etc. stays inside its column on a phone */
+img, input, select, textarea {
+  max-width: 100%;
+}
+
+/* 2b · logo, hero, pictures, buttons, footer — Member 1
+   PASTE this whole block into style.css, directly ABOVE the block that starts
+   "3 · MEMBER 1's OWN PAGES". These parts are shared by every page. */
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header p {
+  margin: 0;
+}
+
+.logo,
+.footer-logo {
+  flex: none;
+  background-color: #FDF6EC;
+  border-radius: 50%;
+  padding: 0.25rem;
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.footer-logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+/* hero: text on one side, picture on the other */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  background-color: rgba(46, 125, 50, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.hero h2 {
+  margin-top: 0;
+  font-size: 1.9rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+/* buttons (links and real buttons look the same) */
+.btn {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  padding: 0.7rem 1.3rem;
+  border: 2px solid #2E7D32;
+  border-radius: 2rem;
+  background-color: #2E7D32;
+  color: #FDF6EC;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #F4A300;
+  border-color: #F4A300;
+  color: #2B2B2B;
+}
+
+.btn-alt {
+  background-color: transparent;
+  color: #2E7D32;
+}
+
+/* cards with a picture on top */
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.card p {
+  margin: 0 0 0.5rem;
+}
+
+/* the four plan cards sit in a tidy 2 x 2 grid instead of a wrapping row */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.price {
+  font-family: "Lora", serif;
+  font-weight: 700;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid #2E7D32;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+}
+
+/* figures, captions, quotes */
+figure {
+  margin: 1.5rem 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0.25rem 1rem;
+  border-left: 4px solid #F4A300;
+  font-family: "Lora", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery figure img {
+  max-width: 100%;
+}
+
+/* tables: header row in the main colour, stripes, scroll inside the wrapper */
+caption {
+  padding: 0.5rem 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+th {
+  background-color: #2E7D32;
+  color: #FDF6EC;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(46, 125, 50, 0.08);
+}
+
+.table-scroll table {
+  min-width: 34rem;
+}
+
+/* call-out band at the bottom of a page */
+.call-out {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #2E7D32;
+  color: #FDF6EC;
+  text-align: center;
+}
+
+.call-out h2 {
+  margin-top: 0;
+}
+
+.call-out .btn {
+  background-color: #FDF6EC;
+  border-color: #FDF6EC;
+  color: #2E7D32;
+}
+
+.call-out .btn:hover,
+.call-out .btn:focus {
+  background-color: #F4A300;
+  border-color: #F4A300;
+  color: #2B2B2B;
+}
+
+/* footer in three columns that wrap */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: left;
+}
+
+.footer-grid > div {
+  flex: 1 1 12rem;
+}
+
+footer h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer li {
+  margin: 0.25rem 0;
+}
+
+footer a {
+  color: #FDF6EC;
+}
+
+.copyright {
+  margin: 1.5rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(253, 246, 236, 0.4);
+  font-size: 0.9rem;
+}
+
+/* Page-specific parts. Cut each piece and paste it into the block of whoever owns
+   that page: steps -> how-it-works + pricing, details -> faq, team -> about,
+   form -> contact. That way every member's own block really holds their own work. */
+
+/* numbered steps (how-it-works.html, pricing.html) */
+.steps {
+  counter-reset: step;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  position: relative;
+  min-height: 2.5rem;
+  margin: 0 0 1.25rem;
+  padding-left: 3.5rem;
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #2E7D32;
+  color: #FDF6EC;
+  font-family: "Lora", serif;
+  font-weight: 700;
+}
+
+.steps strong {
+  display: block;
+}
+
+/* questions that open and close (faq.html) */
+details {
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(43, 43, 43, 0.2);
+  border-radius: 0.5rem;
+  background-color: rgba(46, 125, 50, 0.06);
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+details[open] summary {
+  margin-bottom: 0.5rem;
+}
+
+details p {
+  margin: 0;
+}
+
+/* team (about.html) */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.person {
+  flex: 1 1 12rem;
+  text-align: center;
+}
+
+.person img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+
+.person h3 {
+  margin: 0.5rem 0 0.1rem;
+}
+
+.person p {
+  margin: 0;
+}
+
+/* contact form and details (contact.html) */
+address {
+  font-style: normal;
+}
+
+dt {
+  margin-top: 0.75rem;
+  font-weight: 700;
+}
+
+dd {
+  margin: 0;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  max-width: 36rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid rgba(43, 43, 43, 0.4);
+  border-radius: 0.4rem;
+  background-color: #FDF6EC;
+  color: #2B2B2B;
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #F4A300;
+}
+
+/* 3 · MEMBER 1's OWN PAGES — e.g. index.html, about.html, contact.html
+   rules that only those pages need go here */
+
+
+
+/* 4 · MEMBER 2's OWN PAGES — e.g. menu.html, pricing.html, faq.html
+   rules that only those pages need go here */
+
+
+
+/* 5 · phone — keep this last, it must win the tie */
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  aside {
+    padding: 0 1.5rem;
+  }
+}
