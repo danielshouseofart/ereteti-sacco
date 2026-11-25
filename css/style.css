@@ -226,52 +226,49 @@ main section {
 .card img {
   display: block;
   width: 100%;
+
+/* all elements 
+the  selcts all elements*/
+*{
+    box-sizing:border-box;
+}
+body{
+    margin:0;
+    background: #f7f3e8;
+    color:#262626;
+    line-height:1.5;
+    font-family: 'Source Sans 3', sans-serif;
+}
+h1,h2{
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+}
+img{
+  max-width: 20%;
   height: auto;
-  margin-bottom: 0.75rem;
-  border-radius: 0.5rem;
 }
+header{
+    background: #1f6f3e;
 
-.card p {
-  margin: 0 0 0.5rem;
+}nav{
+    background: #262626;
 }
-
-/* the four plan cards sit in a tidy 2 x 2 grid instead of a wrapping row */
-.plans {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 1rem;
+nav a{
+    color: #f7f3e8;
 }
-
-.price {
-  font-family: "Lora", serif;
-  font-weight: 700;
+a{
+    color: #1f6f3e;
 }
-
-.tag {
-  display: inline-block;
-  margin: 0 0.25rem 0.25rem 0;
-  padding: 0.1rem 0.6rem;
-  border: 1px solid #2E7D32;
-  border-radius: 1rem;
-  font-size: 0.8rem;
+header,main,aside,footer{
+    padding:1rem;
 }
-
-/* figures, captions, quotes */
-figure {
-  margin: 1.5rem 0;
-}
-
-figure img {
-  display: block;
-  width: 100%;
-  max-width: 36rem;
-  height: auto;
-  border-radius: 0.75rem;
-}
-
-figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+nav ul{
+  flex-wrap:wrap;
+    display:flex;
+    gap:0.25rem 1.5rem;
+    list-style:none;
+    margin:0;
+    padding:0.75rem 1rem;
 }
 
 blockquote {
@@ -578,4 +575,83 @@ textarea:focus {
   aside {
     padding: 0 1.5rem;
   }
+nav{
+    position:sticky;
+    top:0;
+}
+body {
+    display :grid;
+    grid-template-columns: minmax(0,1fr) 18rem;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "main aside"
+    "footer footer";
+}
+header{
+    grid-area:header;
+}
+nav{
+    grid-area:nav;
+}
+main{
+    grid-area:main;
+}
+aside{
+    grid-area:aside;
+}
+footer{
+    grid-area:footer;
+}
+.logo{
+    width: 10%;
+}
+footer{
+    border-top: 3px solid #ee4e0a;
+}
+
+@media (max-width: 768px){
+    body{
+        grid-template-columns: minmax(0,1fr);
+        grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    }
+    nav{
+       position: static;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    .logo{
+        width: 2.5rem;
+    }
+}
+
+/*responsive design for the form*/
+.message{
+    color:red;
+}
+input.invalid{
+    border:2px solid red;
+}
+
+.card-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+.card{
+    flex:1 1 14rem;
+    padding:1rem;
+    border:1px solid #1f6f3e;
+}
+figure{
+    margin:1rem 0;
+}
+figure img{
+    max-width:min(100%, 480px);
 }

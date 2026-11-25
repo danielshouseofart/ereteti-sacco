@@ -8,3 +8,6 @@ $db_name = getenv('FRESHBYTES_DB_NAME') ?: 'freshbytes_web';
 
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 $conn->set_charset('utf8mb4');
+=======
+$conn = mysqli_connect('localhost', 'root', '', 'ereteti_web');
+mysqli_set_charset($conn, 'utf8mb4');
