@@ -97,7 +97,7 @@ nav a:hover {
   background-color: #2E7D32;
 }
 
-/* cards that wrap — used on menu.html, and anywhere a row of items needs it */
+/* cards that wrap — used on menu.php, and anywhere a row of items needs it */
 .card-row {
   display: flex;
   flex-wrap: wrap;
@@ -117,7 +117,7 @@ nav a:hover {
   margin-top: 0;
 }
 
-/* a wide table slides instead of pushing the page sideways — pricing.html */
+/* a wide table slides instead of pushing the page sideways — pricing.php */
 .table-scroll {
   overflow-x: auto;
 }
@@ -385,7 +385,7 @@ footer a {
    that page: steps -> how-it-works + pricing, details -> faq, team -> about,
    form -> contact. That way every member's own block really holds their own work. */
 
-/* numbered steps (how-it-works.html, pricing.html) */
+/* numbered steps (how-it-works.php, pricing.php) */
 .steps {
   counter-reset: step;
   margin: 1rem 0;
@@ -421,7 +421,7 @@ footer a {
   display: block;
 }
 
-/* questions that open and close (faq.html) */
+/* questions that open and close (faq.php) */
 details {
   margin: 0.5rem 0;
   padding: 0.75rem 1rem;
@@ -443,7 +443,28 @@ details p {
   margin: 0;
 }
 
-/* team (about.html) */
+.success,
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.success {
+  border: 1px solid #2E7D32;
+  background-color: rgba(46, 125, 50, 0.08);
+}
+
+.message {
+  border: 1px solid #B3261E;
+  background-color: rgba(179, 38, 30, 0.08);
+}
+
+.message p {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+/* team (about.php) */
 .team {
   display: flex;
   flex-wrap: wrap;
@@ -470,7 +491,7 @@ details p {
   margin: 0;
 }
 
-/* contact form and details (contact.html) */
+/* contact form and details (contact.php) */
 address {
   font-style: normal;
 }
@@ -514,12 +535,12 @@ textarea:focus {
   outline: 3px solid #F4A300;
 }
 
-/* 3 · MEMBER 1's OWN PAGES — e.g. index.html, about.html, contact.html
+/* 3 · MEMBER 1's OWN PAGES — e.g. index.php, about.php, contact.php
    rules that only those pages need go here */
 
 
 
-/* 4 · MEMBER 2's OWN PAGES — e.g. menu.html, pricing.html, faq.html
+/* 4 · MEMBER 2's OWN PAGES — e.g. menu.php, pricing.php, faq.php
    rules that only those pages need go here */
 
 

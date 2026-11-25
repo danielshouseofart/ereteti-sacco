@@ -1,36 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Menu — FreshBytes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Lora:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="icon" href="img/logo-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <img class="logo" src="img/logo-mark.svg" alt="FreshBytes logo" width="64" height="64">
-    <div>
-      <h1>FreshBytes</h1>
-      <p>Personalised, nutritionist-planned meals, delivered across Nairobi.</p>
-    </div>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="how-it-works.html">How it works</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section>
+<?php
+$page_title = 'Menu';
+include __DIR__ . '/includes/header.php';
+?>
+<main>
+<section>
       <h2>This week's plans</h2>
       <p>Every plan is cooked fresh for the week ahead, and any of them can be
       changed around an allergy you tell us about at sign-up.</p>
@@ -157,39 +130,12 @@
         <li>Fish</li>
       </ul>
       <p>Want juice or snacks on top of your plan? See the add-ons on the
-      <a href="pricing.html">pricing page</a>.</p>
+      <a href="pricing.php">pricing page</a>.</p>
     </section>
-  </main>
-  <aside>
-    <h2>Dietary notes</h2>
+</main>
+<aside>
+<h2>Dietary notes</h2>
     <p>Tell us about any allergy or intolerance at sign-up — every plan can
     be adjusted around it.</p>
-  </aside>
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <img class="footer-logo" src="img/logo-mark.svg" alt="FreshBytes logo" width="48" height="48">
-        <p>Personalised meals, cooked fresh in Nairobi and delivered once a week.</p>
-      </div>
-      <div>
-        <h2>Explore</h2>
-        <ul>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="how-it-works.html">How it works</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Get in touch</h2>
-        <ul>
-          <li><a href="tel:+254720000000">0720 000 000</a></li>
-          <li><a href="mailto:hello@freshbytes.co.ke">hello@freshbytes.co.ke</a></li>
-          <li>Westlands, Nairobi</li>
-        </ul>
-      </div>
-    </div>
-    <p class="copyright">Site built by the FreshBytes team, DBT Year 1, 2026.</p>
-  </footer>
-</body>
-</html>
+</aside>
+<?php include __DIR__ . '/includes/footer.php'; ?>

@@ -1,38 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pricing — FreshBytes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Lora:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="icon" href="img/logo-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <img class="logo" src="img/logo-mark.svg" alt="FreshBytes logo" width="64" height="64">
-    <div>
-      <h1>FreshBytes</h1>
-      <p>Personalised, nutritionist-planned meals, delivered across Nairobi.</p>
-    </div>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="how-it-works.html">How it works</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section>
+<?php
+$page_title = 'Pricing';
+include __DIR__ . '/includes/header.php';
+?>
+<main>
+<section>
       <h2>Weekly plans</h2>
-      <p>Prices cover seven days of meals, delivered once a week. You can pause
+      <p>Prices cover seven days of meals. You can pause
       or cancel any plan before the Thursday cut-off.</p>
       <div class="table-scroll">
         <table>
@@ -80,8 +53,8 @@
       <ul>
         <li>A fifteen-minute intake call with a nutritionist</li>
         <li>A full menu you can edit before we cook</li>
-        <li>Chilled delivery in Westlands, Lavington, Kilimani and South B</li>
-        <li>Labelled containers with reheating steps on the lid</li>
+        <li>Fresh preparation from your approved menu</li>
+        <li>Meal planning adjusted for your dietary needs</li>
         <li>Free pausing before the Thursday cut-off</li>
       </ul>
     </section>
@@ -141,37 +114,10 @@
         </li>
       </ol>
     </section>
-  </main>
-  <aside>
-    <h2>Pausing a week</h2>
+</main>
+<aside>
+<h2>Pausing a week</h2>
     <p>Pause any plan up to the Thursday cut-off with no charge for the
     following week.</p>
-  </aside>
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <img class="footer-logo" src="img/logo-mark.svg" alt="FreshBytes logo" width="48" height="48">
-        <p>Personalised meals, cooked fresh in Nairobi and delivered once a week.</p>
-      </div>
-      <div>
-        <h2>Explore</h2>
-        <ul>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="how-it-works.html">How it works</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Get in touch</h2>
-        <ul>
-          <li><a href="tel:+254720000000">0720 000 000</a></li>
-          <li><a href="mailto:hello@freshbytes.co.ke">hello@freshbytes.co.ke</a></li>
-          <li>Westlands, Nairobi</li>
-        </ul>
-      </div>
-    </div>
-    <p class="copyright">Site built by the FreshBytes team, DBT Year 1, 2026.</p>
-  </footer>
-</body>
-</html>
+</aside>
+<?php include __DIR__ . '/includes/footer.php'; ?>
