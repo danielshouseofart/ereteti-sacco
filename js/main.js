@@ -8,7 +8,7 @@ console.log(document);
 function checkLitres() {
     let amount = Number(litres.value);
     if(litres.value === "") {
-        litresMessage.textContext = "";
+        litresMessage.textContent = "";
         litres.classList.remove('invalid');
     }
     else if (amount > 60) {
@@ -33,6 +33,7 @@ const memberMessage = document.querySelector('#member-message');
 let memberRegex = /^ER-[0-9]{4}$/;
 
 function checkMember() {
+    if (!member) return;
     let typed = member.value.trim().toUpperCase();
     if(memberRegex.test(typed) ) {
         memberMessage.textContent = "";
@@ -51,18 +52,17 @@ if (member) {
 const deliveryForm = document.querySelector('#delivery-form');
 const formMessage = document.querySelector('#form-message');
 function recordDelivery(event) {
-event.preventDefault();
-checkMember();
-checkLitres();
-if (member.classList.contains('invalid')) {
-member.focus();
-} else if (litres.classList.contains('invalid')) {
-litres.focus();
-} else {
-formMessage.textContent = 'Checked: ' + member.value + ', ' +
-litres.value + ' litres. Nothing is sent yet: ' +
-'that needs a server.';
-}
+    checkMember();
+    checkLitres();
+
+    if (member && member.classList.contains('invalid')) {
+        event.preventDefault();          // stop: the member number is wrong
+        member.focus();
+    } else if (litres && litres.classList.contains('invalid')) {
+        event.preventDefault();          // stop: the litres are wrong
+        litres.focus();
+    }
+    // Nothing is wrong: the form continues to process-delivery.php.
 }
 if (deliveryForm) {
 deliveryForm.addEventListener('submit', recordDelivery);
@@ -88,17 +88,22 @@ shown + ' of ' + routeSections.length + ' routes';
 }
 if (search) {
 search.addEventListener('input', filterRoutes);
+filterRoutes();
 }
 
 const totalCell = document.querySelector('#accepted-total');
 if (totalCell) {
 const rows = document.querySelectorAll('tbody tr');
+if (rows.length === 1 && rows[0].cells.length === 1 && rows[0].cells[0].colSpan === 6) {
+totalCell.textContent = '';
+} else {
 let total = 0;
 for (const row of rows) {
 const cells = row.querySelectorAll('td');
-if (cells[2].textContent === 'Yes') {
-total = total + Number(cells[4].textContent);
+if (cells.length > 4 && cells[4].textContent.trim() === 'Yes') {
+total = total + Number(cells[3].textContent);
 }
 }
 totalCell.textContent = total.toFixed (2);
+}
 }
