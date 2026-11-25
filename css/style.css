@@ -74,7 +74,7 @@ footer{
 }
 footer{
     border-top: 3px solid #ee4e0a;
-}E
+}
 
 @media (max-width: 768px){
     body{
@@ -96,10 +96,28 @@ footer{
         width: 2.5rem;
     }
 }
+
 /*responsive design for the form*/
 .message{
     color:red;
 }
 input.invalid{
-    border: 2px solid red;
+    border:2px solid red;
+}
+
+.card-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+.card{
+    flex:1 1 14rem;
+    padding:1rem;
+    border:1px solid #1f6f3e;
+}
+figure{
+    margin:1rem 0;
+}
+figure img{
+    max-width:min(100%, 480px);
 }
